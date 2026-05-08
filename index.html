@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Giovanni BINTOUL — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Syne:wght@700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ═══ NAVBAR ═══ -->
+  <nav id="navbar" class="navbar">
+    <div class="navbar__inner">
+      <button class="navbar__logo" onclick="navigateTo('accueil')">
+        <span class="logo-bracket">&lt;</span><span class="logo-name">GB</span><span class="logo-bracket">/&gt;</span>
+      </button>
+
+      <ul class="navbar__links" id="navbar-links">
+        <li><button class="nav-link nav-link--active" data-page="accueil"     onclick="navigateTo('accueil')">Accueil</button></li>
+        <li><button class="nav-link"                  data-page="moi"         onclick="navigateTo('moi')">Moi</button></li>
+        <li><button class="nav-link"                  data-page="projets"     onclick="navigateTo('projets')">Projets</button></li>
+        <li><button class="nav-link"                  data-page="veille"      onclick="navigateTo('veille')">Veille</button></li>
+        <li><button class="nav-link"                  data-page="competences" onclick="navigateTo('competences')">Compétences</button></li>
+        <li><button class="nav-link"                  data-page="contact"     onclick="navigateTo('contact')">Contact</button></li>
+        <li class="navbar__theme-mobile">
+          <button class="theme-toggle" onclick="toggleTheme()" aria-label="Changer de thème">
+            <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+            <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+          </button>
+        </li>
+      </ul>
+
+      <div class="navbar__right">
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Changer de thème">
+          <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+        </button>
+        <button class="navbar__burger" id="burger" onclick="toggleMenu()" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ═══ PAGE : ACCUEIL ═══ -->
+  <section id="page-accueil" class="page page--active">
+    <div class="accueil__particles" aria-hidden="true" id="particles-container"></div>
+
+    <div class="accueil__content" id="accueil-content">
+      <div class="accueil__tag">
+        <span class="tag-dot"></span>
+        Disponible pour stage &amp; alternance
+      </div>
+
+      <h1 class="accueil__name">
+        Giovanni<br>
+        <span class="name-highlight">BINTOUL</span>
+      </h1>
+
+      <div class="accueil__typing">
+        <span class="typed-prefix">✦</span>
+        <span class="typed-text" id="typed-text"></span>
+        <span class="cursor"></span>
+      </div>
+
+      <p class="accueil__school">🎓 Lycée Melkior-Garré · BTS SIO SLAM · 2024–2026</p>
+
+      <div class="accueil__actions">
+        <button class="btn-primary" onclick="navigateTo('projets')">
+          Voir mes projets
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+        <button class="btn-outline" onclick="navigateTo('contact')">Me contacter</button>
+      </div>
+
+      <div class="accueil__socials">
+        <a href="https://github.com/gio2ni" target="_blank" rel="noreferrer" class="social-link" aria-label="GitHub">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.09.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.268 2.75 1.026A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.748-1.026 2.748-1.026.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+        </a>
+        <a href="mailto:giovannibintoul46@gmail.com" class="social-link" aria-label="Email">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
+        </a>
+        <a href="https://instagram.com/gio3ni" target="_blank" rel="noreferrer" class="social-link" aria-label="Instagram">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="accueil__scroll-hint" aria-hidden="true">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ═══ PAGE : MOI ═══ -->
+  <section id="page-moi" class="page">
+    <div class="container">
+
+      <div class="section-header">
+        <span class="section-tag">// À propos</span>
+        <h2 class="section-title">Qui suis-<span>je</span> ?</h2>
+        <div class="section-divider"></div>
+      </div>
+
+      <div class="moi__grid" id="moi-grid">
+        <div class="moi__avatar-col">
+          <div class="avatar-frame">
+            <div class="avatar-placeholder">
+              <span class="avatar-initials">GB</span>
+              <div class="avatar-ring"></div>
+              <div class="avatar-ring avatar-ring--2"></div>
+            </div>
+            <div class="avatar-badge"><span class="badge-dot"></span>Open to work</div>
+          </div>
+        </div>
+
+        <div class="moi__text-col">
+          <h3 class="moi__hello">Bonjour, je me présente <span>👋</span></h3>
+          <p class="moi__bio">Je suis étudiant en <strong>BTS SIO option SLAM</strong> au lycée Melkior-Garré, en Guyane française. Dans le domaine du développement web, je construis des applications et des sites modernes à l'aide du code.</p>
+          <p class="moi__bio">Mon objectif : développer des projets utiles qui répondent à des <strong>problèmes concrets</strong>.</p>
+          <p class="moi__bio">Je m'intéresse à la technologie en général, à l'<strong>intelligence artificielle</strong>, etc. Toujours curieux, toujours en train d'apprendre quelque chose de nouveau.</p>
+          <div class="moi__facts">
+            <div class="fact-item glass-card"><span class="fact-icon">🎓</span><div><div class="fact-label">Formation</div><div class="fact-value">BTS SIO SLAM</div></div></div>
+            <div class="fact-item glass-card"><span class="fact-icon">📍</span><div><div class="fact-label">Lycée</div><div class="fact-value">Melkior-Garré</div></div></div>
+            <div class="fact-item glass-card"><span class="fact-icon">📅</span><div><div class="fact-label">Promotion</div><div class="fact-value">2024 – 2026</div></div></div>
+            <div class="fact-item glass-card"><span class="fact-icon">🌍</span><div><div class="fact-label">Localisation</div><div class="fact-value">Guyane, France</div></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Expériences -->
+      <div class="moi__section-sep">
+        <div class="section-header">
+          <span class="section-tag">// Parcours</span>
+          <h2 class="section-title">Expériences <span>professionnelles</span></h2>
+          <div class="section-divider"></div>
+        </div>
+        <div class="exp__list">
+          <div class="exp-card glass-card exp-card--green">
+            <div class="exp-card__icon">🏫</div>
+            <div class="exp-card__body">
+              <div class="exp-card__top"><h3 class="exp-role">Stagiaire Agent Polyvalent (Informatique)</h3><span class="exp-period exp-period--green">2024 – 2025</span></div>
+              <p class="exp-company">Collège Auguste DÉDÉ</p>
+              <p class="exp-missions"><strong>Missions :</strong> Assistance utilisateur, maintenance du parc informatique, support technique aux enseignants et élèves.</p>
+            </div>
+          </div>
+          <div class="exp-card glass-card exp-card--blue">
+            <div class="exp-card__icon">🏛️</div>
+            <div class="exp-card__body">
+              <div class="exp-card__top"><h3 class="exp-role">Stagiaire Agent Polyvalent (Informatique)</h3><span class="exp-period exp-period--blue">2025 – 2026</span></div>
+              <p class="exp-company">Mairie de Cayenne</p>
+              <p class="exp-missions"><strong>Missions :</strong> Assistance utilisateur, maintenance de parc, accueil et orientation des usagers.</p>
+            </div>
+          </div>
+          <div class="exp-card glass-card exp-card--violet">
+            <div class="exp-card__icon">🔒</div>
+            <div class="exp-card__body">
+              <div class="exp-card__top"><h3 class="exp-role">Stagiaire Installateur</h3><span class="exp-period exp-period--violet">2022 – 2024</span></div>
+              <p class="exp-company">Securidom</p>
+              <p class="exp-missions"><strong>Missions :</strong> Installation de systèmes de sécurité, respect des règles, travail en équipe.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Formations -->
+      <div class="moi__section-sep">
+        <div class="section-header">
+          <span class="section-tag">// Diplômes</span>
+          <h2 class="section-title">Mes <span>formations</span></h2>
+          <div class="section-divider"></div>
+        </div>
+        <div class="formation__list">
+          <div class="formation-item glass-card"><span class="formation-icon">🎓</span><div class="formation-body"><h4 class="formation-title">BTS SIO (SLAM – 2ᵉ année)</h4><p class="formation-school">Lycée Melkior et Garré</p></div><span class="formation-year">2024 – Présent</span></div>
+          <div class="formation-item glass-card"><span class="formation-icon">📜</span><div class="formation-body"><h4 class="formation-title">Baccalauréat Systèmes Numériques</h4></div><span class="formation-year">2024</span></div>
+          <div class="formation-item glass-card"><span class="formation-icon">📋</span><div class="formation-body"><h4 class="formation-title">Diplôme National du Brevet</h4></div><span class="formation-year">2021</span></div>
+        </div>
+      </div>
+
+      <!-- Rapports de stage -->
+      <div class="moi__section-sep">
+        <div class="section-header">
+          <span class="section-tag">// Documents stage</span>
+          <h2 class="section-title">Rapports de <span>stage</span></h2>
+          <div class="section-divider"></div>
+        </div>
+        <div class="rapports__grid">
+          <div class="rapport-card glass-card">
+            <div class="rapport-card__icon rapport-card__icon--green"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="13" y2="17"/></svg></div>
+            <h3 class="rapport-title">Rapport de stage – Collège Auguste Dédé</h3>
+            <div class="rapport-card__actions">
+              <button class="rapport-btn rapport-btn--download rapport-btn--green" onclick="downloadDoc('./assets/documents/rapport-stage-dede.pdf','Rapport_Stage_College_Auguste_Dede_BINTOUL_Giovanni.pdf',this)"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Télécharger</button>
+              <a href="./assets/documents/rapport-stage-dede.pdf" target="_blank" rel="noreferrer" class="rapport-btn rapport-btn--voir rapport-btn--green"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Voir</a>
+            </div>
+          </div>
+          <div class="rapport-card glass-card">
+            <div class="rapport-card__icon rapport-card__icon--blue"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="13" y2="17"/></svg></div>
+            <h3 class="rapport-title">Rapport de stage – Mairie de Cayenne</h3>
+            <div class="rapport-card__actions">
+              <button class="rapport-btn rapport-btn--download rapport-btn--blue" onclick="downloadDoc('./assets/documents/rapport-stage-cayenne.pdf','Rapport_Stage_Mairie_Cayenne_BINTOUL_Giovanni.pdf',this)"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Télécharger</button>
+              <a href="./assets/documents/rapport-stage-cayenne.pdf" target="_blank" rel="noreferrer" class="rapport-btn rapport-btn--voir rapport-btn--blue"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Voir</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Rapports projets & attestations -->
+      <div class="moi__section-sep">
+        <div class="section-header">
+          <span class="section-tag">// Documents projets</span>
+          <h2 class="section-title">Rapports &amp; <span>Attestations</span></h2>
+          <div class="section-divider"></div>
+        </div>
+        <div class="rapports__grid rapports__grid--4">
+          <div class="rapport-card glass-card"><div class="rapport-card__icon rapport-card__icon--violet"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div><h3 class="rapport-title">Rapport de projet 1</h3><div class="rapport-card__actions"><button class="rapport-btn rapport-btn--download rapport-btn--violet" onclick="downloadDoc('./assets/documents/rapport-projet-1.pdf','Rapport_Projet_1.pdf',this)"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Télécharger</button><a href="./assets/documents/rapport-projet-1.pdf" target="_blank" rel="noreferrer" class="rapport-btn rapport-btn--voir rapport-btn--violet"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Voir</a></div></div>
+          <div class="rapport-card glass-card"><div class="rapport-card__icon rapport-card__icon--orange"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div><h3 class="rapport-title">Rapport de projet 2</h3><div class="rapport-card__actions"><button class="rapport-btn rapport-btn--download rapport-btn--orange" onclick="downloadDoc('./assets/documents/rapport-projet-2.pdf','Rapport_Projet_2.pdf',this)"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Télécharger</button><a href="./assets/documents/rapport-projet-2.pdf" target="_blank" rel="noreferrer" class="rapport-btn rapport-btn--voir rapport-btn--orange"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Voir</a></div></div>
+          <div class="rapport-card glass-card"><div class="rapport-card__icon rapport-card__icon--green"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div><h3 class="rapport-title">Attestation de stage 1</h3><div class="rapport-card__actions"><button class="rapport-btn rapport-btn--download rapport-btn--green" onclick="downloadDoc('./assets/documents/attestation-stage-1.pdf','Attestation_Stage_1.pdf',this)"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Télécharger</button><a href="./assets/documents/attestation-stage-1.pdf" target="_blank" rel="noreferrer" class="rapport-btn rapport-btn--voir rapport-btn--green"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Voir</a></div></div>
+          <div class="rapport-card glass-card"><div class="rapport-card__icon rapport-card__icon--blue"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div><h3 class="rapport-title">Attestation de stage 2</h3><div class="rapport-card__actions"><button class="rapport-btn rapport-btn--download rapport-btn--blue" onclick="downloadDoc('./assets/documents/attestation-stage-2.pdf','Attestation_Stage_2.pdf',this)"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Télécharger</button><a href="./assets/documents/attestation-stage-2.pdf" target="_blank" rel="noreferrer" class="rapport-btn rapport-btn--voir rapport-btn--blue"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Voir</a></div></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══ PAGE : PROJETS ═══ -->
+  <section id="page-projets" class="page">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">// Réalisations</span>
+        <h2 class="section-title">Mes <span>projets</span></h2>
+        <div class="section-divider"></div>
+      </div>
+      <div class="projets__grid">
+
+        <div class="project-card glass-card project-card--cyan">
+          <div class="project-card__top"><span class="project-icon">🔐</span><span class="project-tag">Application Web</span></div>
+          <h3 class="project-title">Générateur de mot de passe</h3>
+          <p class="project-desc">Application web permettant de générer des mots de passe sécurisés et personnalisables. Choix de la longueur, des caractères spéciaux, chiffres et lettres.</p>
+          <div class="project-tech"><span class="tech-badge">HTML</span><span class="tech-badge">CSS</span><span class="tech-badge">JavaScript</span></div>
+          <div class="project-actions">
+            <a href="https://gio2ni.github.io/g-n-rateur-mdp/" target="_blank" rel="noopener noreferrer" class="proj-btn proj-btn--primary">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              Voir le projet
+            </a>
+          </div>
+          <div class="project-card__glow"></div>
+        </div>
+
+        <div class="project-card glass-card project-card--violet">
+          <div class="project-card__top"><span class="project-icon">🛡️</span><span class="project-tag">Application Mobile / Logiciel</span></div>
+          <h3 class="project-title">Application Anti-vol</h3>
+          <p class="project-desc">Application de sécurité permettant de détecter et prévenir les tentatives de vol. Système d'alerte, suivi en temps réel et notifications automatiques.</p>
+          <div class="project-tech"><span class="tech-badge">Java</span><span class="tech-badge">Android</span><span class="tech-badge">Sécurité</span></div>
+          <div class="project-actions">
+            <a href="./assets/documents/projet-antivol.pdf" target="_blank" rel="noreferrer" class="proj-btn proj-btn--voir"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Voir</a>
+            <a href="./assets/documents/projet-antivol.pdf" download="Projet_Antivol_BINTOUL_Giovanni.pdf" class="proj-btn proj-btn--dl"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Télécharger</a>
+          </div>
+          <div class="project-card__glow"></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ PAGE : VEILLE ═══ -->
+  <section id="page-veille" class="page">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">// Tech watch</span>
+        <h2 class="section-title">Veille <span>technologique</span></h2>
+        <div class="section-divider"></div>
+      </div>
+      <div class="veille__toolbar">
+        <div class="veille__status">
+          <span class="status-badge" id="veille-status-badge"><span class="live-dot"></span>Live – Dev.to</span>
+          <span class="update-time" id="veille-update-time"></span>
+        </div>
+        <button class="btn-refresh" id="veille-refresh-btn" onclick="fetchArticles()">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" id="veille-refresh-icon"><path d="M23 4v6h-6"/><path d="M1 20v-6h6"/><path d="M3.51 9a9 9 0 0114.85-3.36L23 10"/><path d="M20.49 15A9 9 0 015.64 18.36L1 14"/></svg>
+          <span id="veille-refresh-label">Actualiser</span>
+        </button>
+      </div>
+      <div id="veille-grid" class="veille__grid"></div>
+      <p class="veille__refresh-note">🔄 Rafraîchissement automatique toutes les 5 minutes</p>
+    </div>
+  </section>
+
+  <!-- ═══ PAGE : COMPÉTENCES ═══ -->
+  <section id="page-competences" class="page">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">// Skills</span>
+        <h2 class="section-title">Mes <span>compétences</span></h2>
+        <div class="section-divider"></div>
+        <p class="section-subtitle">Les barres se remplissent au scroll — honnêtement, j'apprends encore !</p>
+      </div>
+
+      <div class="competences__grid">
+        <div class="cat-card glass-card" data-cat>
+          <div class="cat-card__header"><span class="cat-icon">🎨</span><h3 class="cat-name">Frontend</h3></div>
+          <div class="cat-skills">
+            <div class="skill-item"><div class="skill-header"><span class="skill-name">HTML / CSS</span><span class="skill-pct skill-pct--cyan">45%</span></div><div class="skill-track"><div class="skill-fill skill-fill--cyan" data-level="45"></div></div></div>
+            <div class="skill-item"><div class="skill-header"><span class="skill-name">JavaScript</span><span class="skill-pct skill-pct--cyan">42%</span></div><div class="skill-track"><div class="skill-fill skill-fill--cyan" data-level="42"></div></div></div>
+          </div>
+        </div>
+        <div class="cat-card glass-card" data-cat>
+          <div class="cat-card__header"><span class="cat-icon">⚙️</span><h3 class="cat-name">Backend</h3></div>
+          <div class="cat-skills">
+            <div class="skill-item"><div class="skill-header"><span class="skill-name">PHP</span><span class="skill-pct skill-pct--violet">40%</span></div><div class="skill-track"><div class="skill-fill skill-fill--violet" data-level="40"></div></div></div>
+            <div class="skill-item"><div class="skill-header"><span class="skill-name">MySQL</span><span class="skill-pct skill-pct--violet">48%</span></div><div class="skill-track"><div class="skill-fill skill-fill--violet" data-level="48"></div></div></div>
+          </div>
+        </div>
+        <div class="cat-card glass-card" data-cat>
+          <div class="cat-card__header"><span class="cat-icon">🛠️</span><h3 class="cat-name">Outils</h3></div>
+          <div class="cat-skills">
+            <div class="skill-item"><div class="skill-header"><span class="skill-name">Git / GitHub</span><span class="skill-pct skill-pct--pink">55%</span></div><div class="skill-track"><div class="skill-fill skill-fill--pink" data-level="55"></div></div></div>
+            <div class="skill-item"><div class="skill-header"><span class="skill-name">Docker</span><span class="skill-pct skill-pct--pink">35%</span></div><div class="skill-track"><div class="skill-fill skill-fill--pink" data-level="35"></div></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="competences__footer">
+        <p>🚀 En constante progression — chaque projet est une nouvelle opportunité d'apprendre</p>
+      </div>
+
+      <!-- Tableau de synthèse -->
+      <div class="synthese-section">
+        <div class="section-header">
+          <span class="section-tag">// Document</span>
+          <h2 class="section-title">Tableau de <span>synthèse</span></h2>
+          <div class="section-divider"></div>
+        </div>
+        <div class="synthese-card glass-card" id="synthese-card">
+          <div class="synthese-icon-wrap synthese-icon-wrap--excel">
+            <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/></svg>
+            <span class="synthese-badge">XLSX</span>
+          </div>
+          <div class="synthese-body">
+            <h3 class="synthese-title">Tableau de synthèse</h3>
+            <p class="synthese-desc">Document Excel récapitulatif de mes compétences BTS SIO, organisé par domaines et niveaux de maîtrise.</p>
+            <p class="synthese-note">💡 Aperçu via Google Docs · Téléchargement direct disponible</p>
+          </div>
+          <div class="synthese-actions">
+            <!-- Remplace VOTRE-DOMAINE par ex: gio2ni.github.io/portfolio -->
+            <a href="https://docs.google.com/gview?url=https://VOTRE-DOMAINE/assets/documents/tableau-synthese.xlsx&embedded=true"
+               target="_blank" rel="noreferrer" class="synthese-btn synthese-btn--voir">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+              Voir
+            </a>
+            <a href="./assets/documents/tableau-synthese.xlsx" download="Tableau_Synthese_BINTOUL_Giovanni.xlsx" class="synthese-btn synthese-btn--dl">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Télécharger
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══ PAGE : CONTACT ═══ -->
+  <section id="page-contact" class="page">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">// Restons en contact</span>
+        <h2 class="section-title">Me <span>contacter</span></h2>
+        <div class="section-divider"></div>
+      </div>
+      <div class="contact__icons-grid">
+        <a href="mailto:giovannibintoul46@gmail.com" class="contact-icon-btn contact-icon-btn--blue" aria-label="Email">
+          <div class="contact-icon-btn__inner"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg></div>
+          <span class="contact-icon-btn__label">Email</span>
+        </a>
+        <a href="https://github.com/gio2ni" target="_blank" rel="noreferrer" class="contact-icon-btn contact-icon-btn--dark" aria-label="GitHub">
+          <div class="contact-icon-btn__inner"><svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.09.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.268 2.75 1.026A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.748-1.026 2.748-1.026.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg></div>
+          <span class="contact-icon-btn__label">GitHub</span>
+        </a>
+        <a href="https://wa.me/5940694493899" target="_blank" rel="noreferrer" class="contact-icon-btn contact-icon-btn--green" aria-label="WhatsApp">
+          <div class="contact-icon-btn__inner"><svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div>
+          <span class="contact-icon-btn__label">WhatsApp</span>
+        </a>
+        <a href="https://instagram.com/gio3ni" target="_blank" rel="noreferrer" class="contact-icon-btn contact-icon-btn--pink" aria-label="Instagram">
+          <div class="contact-icon-btn__inner"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg></div>
+          <span class="contact-icon-btn__label">Instagram</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <button class="footer__logo" onclick="navigateTo('accueil')">
+          <span class="logo-grad">&lt;</span><span>GB</span><span class="logo-grad">/&gt;</span>
+        </button>
+        <p class="footer__copy">© 2024–2026 · Giovanni BINTOUL · BTS SIO SLAM</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══ CV FAB ═══ -->
+  <a href="./assets/documents/CV.pdf" download="CV_Giovanni_BINTOUL.pdf" class="cv-fab" aria-label="Télécharger mon CV">
+    <span class="cv-fab__tooltip">Voir mon CV</span>
+    <span class="cv-fab__ripple"></span>
+    <svg class="cv-fab__icon" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+      <polyline points="14 2 14 8 20 8"/>
+      <line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="13" y2="17"/><line x1="9" y1="9" x2="10" y2="9"/>
+    </svg>
+    <span class="cv-fab__label">CV</span>
+  </a>
+
+  <!-- ═══ COOKIE BANNER ═══ -->
+  <div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Consentement des cookies" aria-hidden="true">
+    <div class="cookie-banner__icon" aria-hidden="true">🍪</div>
+    <div class="cookie-banner__content">
+      <h3 class="cookie-banner__title">Ce site utilise des cookies</h3>
+      <p class="cookie-banner__text">Ce site utilise des cookies pour améliorer votre expérience et mémoriser vos préférences (thème clair / sombre).</p>
+    </div>
+    <div class="cookie-banner__actions">
+      <button class="cookie-btn cookie-btn--refuse" onclick="handleCookie('refused')">❌ Refuser</button>
+      <button class="cookie-btn cookie-btn--accept" onclick="handleCookie('accepted')">✔ Accepter</button>
+    </div>
+  </div>
+  <button class="cookie-settings-btn" id="cookie-settings-btn" onclick="reopenCookieBanner()" title="Gérer mes préférences" style="display:none">🍪</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
