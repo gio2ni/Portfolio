@@ -283,37 +283,6 @@ async function downloadDoc(href, downloadName, btn) {
   btn.disabled  = false
 }
 
-// ─── Cookie banner ─────────────────────────────────────────
-
-function handleCookie(choice) {
-  localStorage.setItem('cookieConsent', choice)
-  const banner = document.getElementById('cookie-banner')
-  const settingsBtn = document.getElementById('cookie-settings-btn')
-  banner.classList.remove('cookie-banner--visible')
-  banner.setAttribute('aria-hidden', 'true')
-  settingsBtn.style.display = 'block'
-}
-
-function reopenCookieBanner() {
-  const banner = document.getElementById('cookie-banner')
-  banner.classList.add('cookie-banner--visible')
-  banner.setAttribute('aria-hidden', 'false')
-}
-
-function initCookieBanner() {
-  const stored = localStorage.getItem('cookieConsent')
-  const settingsBtn = document.getElementById('cookie-settings-btn')
-  if (!stored) {
-    // Affiche la bannière avec un léger délai pour l'animation d'entrée
-    setTimeout(() => {
-      const banner = document.getElementById('cookie-banner')
-      banner.classList.add('cookie-banner--visible')
-      banner.setAttribute('aria-hidden', 'false')
-    }, 900)
-  } else {
-    settingsBtn.style.display = 'block'
-  }
-}
 
 // ─── Initialisation ────────────────────────────────────────
 
@@ -321,7 +290,6 @@ function init() {
   loadTheme()
   initParticles()
   initAccueil()
-  initCookieBanner()
 }
 
 init()

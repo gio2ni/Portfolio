@@ -430,32 +430,6 @@ html.dark-mode .icon-moon { display:block; }
 .cv-fab__tooltip { position:absolute; right:calc(100% + 10px); white-space:nowrap; background:var(--text); color:var(--bg-primary); font-size:0.75rem; padding:0.3rem 0.7rem; border-radius:6px; opacity:0; transition:opacity 0.2s; pointer-events:none; }
 .cv-fab:hover .cv-fab__tooltip { opacity:1; }
 
-/* ============================================================
-   COOKIE BANNER
-   ============================================================ */
-.cookie-banner {
-  position:fixed; bottom:1.5rem; left:50%; transform:translateX(-50%) translateY(20px);
-  z-index:9999; background:var(--surface); border:1px solid var(--border);
-  border-radius:var(--radius); box-shadow:0 8px 40px rgba(0,0,0,0.15);
-  padding:1.25rem 1.5rem; display:flex; align-items:center; gap:1rem;
-  max-width:640px; width:calc(100% - 2rem);
-  opacity:0; pointer-events:none; transition:opacity 0.3s, transform 0.3s;
-}
-.cookie-banner--visible { opacity:1; transform:translateX(-50%) translateY(0); pointer-events:auto; }
-.cookie-banner__icon { font-size:1.75rem; flex-shrink:0; }
-.cookie-banner__content { flex:1; }
-.cookie-banner__title { font-size:0.9rem; font-weight:700; margin-bottom:0.3rem; }
-.cookie-banner__text { font-size:0.8rem; color:var(--text-muted); line-height:1.5; }
-.cookie-banner__actions { display:flex; gap:0.5rem; flex-shrink:0; }
-.cookie-btn { font-size:0.8rem; font-weight:600; padding:0.45rem 0.9rem; border-radius:8px; cursor:pointer; border:1px solid var(--border); transition:all 0.2s; }
-.cookie-btn--refuse { background:none; color:var(--text-muted); }
-.cookie-btn--refuse:hover { border-color:#ef4444; color:#ef4444; }
-.cookie-btn--accept { background:linear-gradient(135deg,var(--accent-blue),var(--accent-violet)); color:#fff; border:none; }
-.cookie-btn--accept:hover { opacity:0.9; }
-
-/* Petit bouton réglages cookies (visible après le choix) */
-.cookie-settings-btn { position:fixed; bottom:1.5rem; left:1.5rem; z-index:900; font-size:1.1rem; background:var(--surface); border:1px solid var(--border); border-radius:50%; width:40px; height:40px; cursor:pointer; box-shadow:var(--shadow); transition:transform 0.2s; }
-.cookie-settings-btn:hover { transform:scale(1.1); }
 
 /* ============================================================
    RESPONSIVE — mobile < 768px
