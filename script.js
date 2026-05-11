@@ -188,11 +188,14 @@ async function fetchArticles() {
   const updateTime = document.getElementById('veille-update-time')
   if (!grid) return
 
-  // État chargement
-  label.textContent = 'Chargement…'
-  icon.classList.add('spinning')
-  btn.disabled = true
-  grid.innerHTML = Array.from({length:6}).map(() => '<div class="skeleton-card glass-card"></div>').join('')
+  // État chargement (uniquement si les éléments bouton sont visibles)
+  if (label) label.textContent = 'Chargement…'
+  if (icon)  icon.classList.add('spinning')
+  if (btn)   btn.disabled = true
+  // Skeletons uniquement si la grille est vide (premier chargement)
+  if (veilleArticles.length === 0) {
+    grid.innerHTML = Array.from({length:6}).map(() => '<div class="skeleton-card glass-card"></div>').join('')
+  }
 
   let articles, usingFallback = false
   try {
@@ -209,16 +212,18 @@ async function fetchArticles() {
   veilleArticles = articles
 
   // Badge statut
-  if (usingFallback) {
-    badge.className = 'status-badge status-badge--info'
-    badge.innerHTML = 'Articles sélectionnés'
-  } else {
-    badge.className = 'status-badge'
-    badge.innerHTML = '<span class="live-dot"></span>Live – Dev.to'
+  if (badge) {
+    if (usingFallback) {
+      badge.className = 'status-badge status-badge--info'
+      badge.innerHTML = 'Articles sélectionnés'
+    } else {
+      badge.className = 'status-badge'
+      badge.innerHTML = '<span class="live-dot"></span>Live – Dev.to'
+    }
   }
 
   // Heure de mise à jour
-  updateTime.textContent = 'Mis à jour à ' + new Date().toLocaleTimeString('fr-FR', {hour:'2-digit', minute:'2-digit'})
+  if (updateTime) updateTime.textContent = 'Mis à jour à ' + new Date().toLocaleTimeString('fr-FR', {hour:'2-digit', minute:'2-digit'})
 
   // Rendu des cartes
   grid.innerHTML = ''
@@ -248,9 +253,9 @@ async function fetchArticles() {
   })
 
   // Reset bouton
-  label.textContent = 'Actualiser'
-  icon.classList.remove('spinning')
-  btn.disabled = false
+  if (label) label.textContent = 'Actualiser'
+  if (icon)  icon.classList.remove('spinning')
+  if (btn)   btn.disabled = false
 
   // Rafraîchissement automatique toutes les 5 minutes
   clearInterval(veilleTimer)
@@ -290,6 +295,8 @@ function init() {
   loadTheme()
   initParticles()
   initAccueil()
+  // Préchargement des articles dès l'ouverture du site
+  fetchArticles()
 }
 
 init()
