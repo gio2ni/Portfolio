@@ -475,6 +475,17 @@ html.dark-mode .icon-moon { display:block; }
   .cv-fab { padding:0.75rem; border-radius:50%; }
 }
 
+/* ─── Blocs compétences BTS SIO ─────────────────────────── */
+.project-blocs {
+  display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1rem;
+}
+.bloc-badge {
+  font-family: var(--font-mono); font-size: 0.68rem; font-weight: 600;
+  color: var(--accent-violet); background: rgba(123,92,250,0.08);
+  border: 1px solid rgba(123,92,250,0.25); border-radius: 4px;
+  padding: 0.2rem 0.55rem; letter-spacing: 0.03em;
+}
+
 /* ─── Bouton Android Studio ─────────────────────────────── */
 .proj-btn--android {
   display: inline-flex; align-items: center; gap: 0.4rem;
