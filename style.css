@@ -475,6 +475,25 @@ html.dark-mode .icon-moon { display:block; }
   .cv-fab { padding:0.75rem; border-radius:50%; }
 }
 
+/* ─── Bouton Android Studio ─────────────────────────────── */
+.proj-btn--android {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  padding: 0.55rem 1rem; font-size: 0.8rem; font-weight: 500;
+  font-family: var(--font-body); cursor: pointer;
+  background: rgba(61,220,132,0.1); color: #3ddc84;
+  border: 1px solid rgba(61,220,132,0.3); border-radius: var(--radius-sm);
+  transition: background var(--transition), border-color var(--transition);
+}
+.proj-btn--android:hover { background: rgba(61,220,132,0.18); border-color: rgba(61,220,132,0.5); }
+
+.android-toast {
+  margin-top: 0.7rem; font-size: 0.78rem; color: #3ddc84;
+  background: rgba(61,220,132,0.08); border: 1px solid rgba(61,220,132,0.2);
+  border-radius: var(--radius-sm); padding: 0.45rem 0.8rem;
+  display: none; width: fit-content;
+}
+.android-toast--visible { display: block; }
+
 /* ============================================================
    PAGE ANTIVOL
    ============================================================ */

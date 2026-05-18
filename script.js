@@ -2,6 +2,16 @@
 // PORTFOLIO — Giovanni BINTOUL — script.js
 // ============================================================
 
+// ─── Bouton Android Studio ────────────────────────────────
+function ouvrirAndroidStudio() {
+  const cmd = 'open -a "Android Studio" /Users/valentino/Documents/bts/AntiVol'
+  navigator.clipboard.writeText(cmd).then(() => {
+    const toast = document.getElementById('android-toast')
+    toast.classList.add('android-toast--visible')
+    setTimeout(() => toast.classList.remove('android-toast--visible'), 3000)
+  })
+}
+
 // ─── Navigation SPA ───────────────────────────────────────
 
 let activePage = 'accueil'
