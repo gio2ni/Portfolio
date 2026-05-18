@@ -255,13 +255,110 @@
           <p class="project-desc">Application de sécurité permettant de détecter et prévenir les tentatives de vol. Système d'alerte, suivi en temps réel et notifications automatiques.</p>
           <div class="project-tech"><span class="tech-badge">Java</span><span class="tech-badge">Android</span><span class="tech-badge">Sécurité</span></div>
           <div class="project-actions">
-            <a href="https://github.com/gio2ni/antivol" target="_blank" rel="noopener noreferrer" class="proj-btn proj-btn--voir"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.09.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.268 2.75 1.026A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.748-1.026 2.748-1.026.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>Voir le projet</a>
-            <a href="./assets/documents/rapport-projet-2.pdf" download="Rapport_Projet_2_Antivol_BINTOUL_Giovanni.pdf" class="proj-btn proj-btn--dl"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Télécharger rapport</a>
+            <button onclick="navigateTo('antivol')" class="proj-btn proj-btn--primary">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              Voir le projet
+            </button>
           </div>
           <div class="project-card__glow"></div>
         </div>
 
       </div>
+    </div>
+  </section>
+
+  <!-- ═══ PAGE : ANTIVOL ═══ -->
+  <section id="page-antivol" class="page">
+    <div class="container">
+
+      <div class="antivol-back">
+        <button class="antivol-back-btn" onclick="navigateTo('projets')">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+          Retour aux projets
+        </button>
+      </div>
+
+      <div class="antivol-hero glass-card">
+        <div class="antivol-hero__left">
+          <span class="antivol-tag">Application Mobile / Logiciel</span>
+          <h2 class="antivol-title">🛡️ Application Anti-vol</h2>
+          <p class="antivol-desc">Application Android de sécurité mobile qui surveille les mouvements du téléphone via l'accéléromètre. Dès qu'un mouvement suspect est détecté, une alarme sonore se déclenche au volume maximum. Seul un code PIN à 4 chiffres permet de l'arrêter.</p>
+          <div class="antivol-tech-row">
+            <span class="tech-badge">Java</span>
+            <span class="tech-badge">Android Studio</span>
+            <span class="tech-badge">Accéléromètre</span>
+            <span class="tech-badge">MediaPlayer</span>
+            <span class="tech-badge">SensorManager</span>
+          </div>
+          <a href="https://github.com/gio2ni/antivol" target="_blank" rel="noopener noreferrer" class="antivol-github-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.09.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.268 2.75 1.026A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.748-1.026 2.748-1.026.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+            Voir le code sur GitHub
+          </a>
+        </div>
+        <div class="antivol-hero__right">
+          <div class="antivol-phone-mock">
+            <div class="phone-screen">
+              <div class="phone-status-bar"></div>
+              <div class="phone-app-title">🛡️ AntiVol</div>
+              <div class="phone-pin-label">Code PIN (4 chiffres)</div>
+              <div class="phone-pin-dots"><span></span><span></span><span></span><span></span></div>
+              <div class="phone-btn phone-btn--green">ACTIVER LA PROTECTION</div>
+              <div class="phone-movement">Mouvement : 0.0</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="antivol-grid">
+
+        <div class="antivol-section glass-card">
+          <h3 class="antivol-section__title">
+            <span class="antivol-section__icon">⚙️</span> Comment ça fonctionne
+          </h3>
+          <ol class="antivol-steps">
+            <li><strong>Tu entres un code PIN à 4 chiffres</strong> et tu actives la protection.</li>
+            <li><strong>L'accéléromètre surveille en continu</strong> les mouvements du téléphone (seuil : 12.0 m/s²).</li>
+            <li><strong>Dès qu'un mouvement dépasse le seuil</strong>, l'alarme sonne au volume maximum.</li>
+            <li><strong>Seul ton code PIN</strong> peut couper l'alarme.</li>
+          </ol>
+        </div>
+
+        <div class="antivol-section glass-card">
+          <h3 class="antivol-section__title">
+            <span class="antivol-section__icon">🔧</span> Difficultés rencontrées
+          </h3>
+          <ul class="antivol-difficulties">
+            <li>Calibrer le <strong>seuil de sensibilité</strong> de l'accéléromètre pour éviter les faux positifs.</li>
+            <li>Forcer le <strong>volume maximum</strong> au déclenchement malgré le mode silencieux.</li>
+            <li>Gérer correctement le <strong>cycle de vie Android</strong> (onPause / onResume) pour ne pas perdre la protection.</li>
+            <li>Libérer proprement le <strong>MediaPlayer</strong> sans crash à la fermeture.</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="antivol-code-block glass-card">
+        <div class="code-header">
+          <span class="code-dot code-dot--red"></span>
+          <span class="code-dot code-dot--yellow"></span>
+          <span class="code-dot code-dot--green"></span>
+          <span class="code-filename">MainActivity.java — détection mouvement</span>
+        </div>
+        <pre class="code-content"><code><span class="code-keyword">public void</span> <span class="code-fn">onSensorChanged</span>(SensorEvent event) {
+    <span class="code-keyword">float</span> x = event.values[<span class="code-num">0</span>];
+    <span class="code-keyword">float</span> y = event.values[<span class="code-num">1</span>];
+    <span class="code-keyword">float</span> z = event.values[<span class="code-num">2</span>];
+
+    <span class="code-keyword">float</span> magnitude = (<span class="code-keyword">float</span>) Math.sqrt(x*x + y*y + z*z);
+    <span class="code-keyword">float</span> mouvement  = Math.abs(magnitude - SensorManager.GRAVITY_EARTH);
+
+    <span class="code-comment">// Si le mouvement dépasse le seuil → alarme</span>
+    <span class="code-keyword">if</span> (mouvement &gt; SEUIL &amp;&amp; !alarmeActive) {
+        runOnUiThread(() -&gt; <span class="code-fn">declencherAlarme</span>());
+    }
+}</code></pre>
+      </div>
+
     </div>
   </section>
 

@@ -474,3 +474,141 @@ html.dark-mode .icon-moon { display:block; }
   .cv-fab__label { display:none; }
   .cv-fab { padding:0.75rem; border-radius:50%; }
 }
+
+/* ============================================================
+   PAGE ANTIVOL
+   ============================================================ */
+
+.antivol-back { margin-bottom: 1.5rem; }
+
+.antivol-back-btn {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: none; border: 1px solid var(--border-glass);
+  color: var(--text-secondary); font-family: var(--font-body);
+  font-size: 0.85rem; padding: 0.5rem 1rem; border-radius: var(--radius-sm);
+  cursor: pointer; transition: color var(--transition), border-color var(--transition);
+}
+.antivol-back-btn:hover { color: var(--text-primary); border-color: var(--accent-violet); }
+
+/* Hero */
+.antivol-hero {
+  display: grid; grid-template-columns: 1fr auto;
+  gap: 3rem; align-items: center; padding: 2.5rem; margin-bottom: 1.5rem;
+}
+.antivol-tag {
+  font-family: var(--font-mono); font-size: 0.7rem; text-transform: uppercase;
+  letter-spacing: 0.1em; color: var(--accent-violet);
+  border: 1px solid rgba(123,92,250,0.25); background: rgba(123,92,250,0.06);
+  padding: 0.25rem 0.8rem; border-radius: 50px; display: inline-block; margin-bottom: 0.8rem;
+}
+.antivol-title {
+  font-family: var(--font-display); font-size: 2rem; font-weight: 700;
+  color: var(--text-primary); margin-bottom: 1rem;
+}
+.antivol-desc {
+  color: var(--text-secondary); font-size: 0.95rem; line-height: 1.75; margin-bottom: 1.2rem;
+}
+.antivol-tech-row { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem; }
+
+.antivol-github-btn {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  background: var(--bg-glass); border: 1px solid var(--border-glass);
+  color: var(--text-primary); padding: 0.7rem 1.4rem; border-radius: var(--radius-sm);
+  text-decoration: none; font-size: 0.9rem; font-weight: 500;
+  transition: border-color var(--transition), background var(--transition);
+}
+.antivol-github-btn:hover { border-color: var(--accent-violet); background: rgba(123,92,250,0.08); }
+
+/* Mockup téléphone */
+.antivol-phone-mock {
+  width: 180px; flex-shrink: 0;
+  background: #1a1a2e; border-radius: 24px; padding: 10px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5), 0 0 0 2px rgba(123,92,250,0.3);
+}
+.phone-screen {
+  background: #0f0f1a; border-radius: 16px; padding: 16px 12px;
+  min-height: 280px; display: flex; flex-direction: column; gap: 10px;
+}
+.phone-status-bar {
+  height: 4px; background: rgba(123,92,250,0.4); border-radius: 2px; margin-bottom: 4px;
+}
+.phone-app-title {
+  font-size: 0.85rem; font-weight: 700; color: #e0e0ff; text-align: center;
+}
+.phone-pin-label { font-size: 0.62rem; color: #888; text-align: center; }
+.phone-pin-dots {
+  display: flex; justify-content: center; gap: 8px; margin: 2px 0;
+}
+.phone-pin-dots span {
+  width: 10px; height: 10px; border-radius: 50%;
+  border: 2px solid rgba(123,92,250,0.6); background: rgba(123,92,250,0.15);
+}
+.phone-btn {
+  text-align: center; font-size: 0.6rem; font-weight: 700;
+  padding: 8px 4px; border-radius: 8px; letter-spacing: 0.03em;
+}
+.phone-btn--green { background: #1a7a1a; color: #7fff7f; }
+.phone-movement { font-size: 0.6rem; color: #666; text-align: center; margin-top: auto; }
+
+/* Grid sections */
+.antivol-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;
+}
+.antivol-section { padding: 2rem; }
+.antivol-section__title {
+  font-family: var(--font-display); font-size: 1.1rem; font-weight: 700;
+  color: var(--text-primary); margin-bottom: 1.2rem;
+  display: flex; align-items: center; gap: 0.5rem;
+}
+.antivol-section__icon { font-size: 1.2rem; }
+
+.antivol-steps {
+  padding-left: 1.2rem; display: flex; flex-direction: column; gap: 0.8rem;
+}
+.antivol-steps li { color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6; }
+.antivol-steps li strong { color: var(--text-primary); }
+
+.antivol-difficulties {
+  list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.8rem;
+}
+.antivol-difficulties li {
+  color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;
+  padding-left: 1.1rem; position: relative;
+}
+.antivol-difficulties li::before {
+  content: '→'; position: absolute; left: 0; color: var(--accent-violet);
+}
+.antivol-difficulties li strong { color: var(--text-primary); }
+
+/* Bloc de code */
+.antivol-code-block { padding: 0; overflow: hidden; }
+.code-header {
+  display: flex; align-items: center; gap: 0.5rem;
+  padding: 0.7rem 1.2rem; border-bottom: 1px solid var(--border-glass);
+  background: rgba(0,0,0,0.15);
+}
+.code-dot { width: 12px; height: 12px; border-radius: 50%; }
+.code-dot--red    { background: #ff5f57; }
+.code-dot--yellow { background: #febc2e; }
+.code-dot--green  { background: #28c840; }
+.code-filename {
+  font-family: var(--font-mono); font-size: 0.75rem;
+  color: var(--text-secondary); margin-left: 0.5rem;
+}
+.code-content {
+  margin: 0; padding: 1.5rem 1.8rem; overflow-x: auto;
+  font-family: var(--font-mono); font-size: 0.82rem; line-height: 1.7;
+  color: #abb2bf; background: rgba(0,0,0,0.2);
+}
+.code-keyword { color: #c678dd; }
+.code-fn      { color: #61afef; }
+.code-num     { color: #d19a66; }
+.code-comment { color: #5c6370; font-style: italic; }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .antivol-hero { grid-template-columns: 1fr; }
+  .antivol-hero__right { display: none; }
+  .antivol-grid { grid-template-columns: 1fr; }
+  .antivol-title { font-size: 1.5rem; }
+}
