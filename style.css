@@ -233,6 +233,7 @@ html.dark-mode .icon-moon { display:block; }
 .exp__list { display:flex; flex-direction:column; gap:1rem; }
 .exp-card { display:flex; gap:1.25rem; padding:1.25rem 1.5rem; }
 .exp-card__icon { font-size:1.75rem; flex-shrink:0; }
+.exp-card__body { flex:1; min-width:0; }
 .exp-card__top { display:flex; justify-content:space-between; align-items:center; gap:1rem; margin-bottom:0.25rem; flex-wrap:nowrap; }
 .exp-role { font-size:0.95rem; font-weight:600; }
 .exp-company { font-size:0.875rem; color:var(--text-muted); margin-bottom:0.4rem; }
