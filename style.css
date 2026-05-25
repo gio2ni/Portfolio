@@ -142,7 +142,7 @@ html.dark-mode .icon-moon { display:block; }
 /* ============================================================
    ACCUEIL
    ============================================================ */
-#page-accueil { display:flex; flex-direction:column; align-items:center; justify-content:center; padding:0; min-height:100vh; text-align:center; overflow:hidden; }
+#page-accueil { flex-direction:column; align-items:center; justify-content:center; padding:0; min-height:100vh; text-align:center; overflow:hidden; }
 #page-accueil.page--active { display:flex; }
 
 /* Particules flottantes (générées par JS) */
