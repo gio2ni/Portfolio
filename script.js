@@ -18,9 +18,18 @@ let activePage = 'accueil'
 
 // Affiche la section demandée, cache les autres
 function navigateTo(pageId) {
-  document.querySelectorAll('.page').forEach(p => p.classList.remove('page--active'))
+  // Force display:none sur TOUTES les pages via style inline (priorité absolue)
+  document.querySelectorAll('.page').forEach(p => {
+    p.classList.remove('page--active')
+    p.style.display = 'none'
+  })
+
+  // Affiche uniquement la page cible
   const target = document.getElementById('page-' + pageId)
-  if (target) target.classList.add('page--active')
+  if (target) {
+    target.classList.add('page--active')
+    target.style.display = (pageId === 'accueil') ? 'flex' : 'block'
+  }
 
   // Met à jour le lien actif dans la navbar
   document.querySelectorAll('.nav-link').forEach(link => {
@@ -290,6 +299,10 @@ async function downloadDoc(href, downloadName, btn) {
 
 function init() {
   loadTheme()
+  // Force l'état initial : seule la page accueil est visible
+  document.querySelectorAll('.page').forEach(p => { p.style.display = 'none' })
+  const accueil = document.getElementById('page-accueil')
+  if (accueil) accueil.style.display = 'flex'
   initParticles()
   initAccueil()
   // Préchargement des articles dès l'ouverture du site
