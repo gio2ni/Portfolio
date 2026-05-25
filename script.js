@@ -29,7 +29,7 @@ function navigateTo(pageId) {
 
   activePage = pageId
   closeMenu()
-  window.scrollTo({ top: 0, behavior: 'smooth' })
+  window.scrollTo(0, 0)
 
   // Déclenche les animations de la page cible
   if (pageId === 'competences') initSkillBars()
