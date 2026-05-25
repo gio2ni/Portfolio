@@ -237,9 +237,13 @@
             <span class="bloc-badge">B3.1</span>
           </div>
           <div class="project-actions">
-            <a href="https://gio2ni.github.io/g-n-rateur-mdp/" target="_blank" rel="noopener noreferrer" class="proj-btn proj-btn--primary">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            <button onclick="navigateTo('generateur')" class="proj-btn proj-btn--primary">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               Voir le projet
+            </button>
+            <a href="https://gio2ni.github.io/g-n-rateur-mdp/" target="_blank" rel="noopener noreferrer" class="proj-btn proj-btn--android">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              Voir en ligne
             </a>
           </div>
           <div class="project-card__glow"></div>
@@ -330,13 +334,25 @@
 
         <div class="antivol-section glass-card">
           <h3 class="antivol-section__title">
-            <span class="antivol-section__icon">🔧</span> Difficultés rencontrées
+            <span class="antivol-section__icon">🔧</span> Difficultés &amp; Solutions
           </h3>
           <ul class="antivol-difficulties">
-            <li>Calibrer le <strong>seuil de sensibilité</strong> de l'accéléromètre pour éviter les faux positifs.</li>
-            <li>Forcer le <strong>volume maximum</strong> au déclenchement malgré le mode silencieux.</li>
-            <li>Gérer correctement le <strong>cycle de vie Android</strong> (onPause / onResume) pour ne pas perdre la protection.</li>
-            <li>Libérer proprement le <strong>MediaPlayer</strong> sans crash à la fermeture.</li>
+            <li>
+              <strong>Calibrer le seuil de sensibilité</strong> — trop bas, l'alarme se déclenchait pour un simple frôlement ; trop haut, elle ne se déclenchait plus.
+              <br><span style="color:var(--accent-green)">✅ Solution :</span> Dizaines de tests sur appareil réel → seuil fixé à <strong>12 m/s²</strong>, valeur qui distingue un vrai mouvement de la gravité naturelle.
+            </li>
+            <li>
+              <strong>Forcer le volume maximum</strong> malgré le mode silencieux.
+              <br><span style="color:var(--accent-green)">✅ Solution :</span> Utilisation de <strong>AudioManager.STREAM_ALARM</strong>, le seul canal audio Android qui ignore le mode silencieux.
+            </li>
+            <li>
+              <strong>Gérer le cycle de vie Android</strong> (onPause / onResume) — lors d'un appel entrant, le capteur s'arrêtait et la protection était perdue.
+              <br><span style="color:var(--accent-green)">✅ Solution :</span> Réenregistrement du listener dans <strong>onResume()</strong> pour reprendre la surveillance dès que l'app revient au premier plan.
+            </li>
+            <li>
+              <strong>Libérer le MediaPlayer</strong> sans crash à la fermeture.
+              <br><span style="color:var(--accent-green)">✅ Solution :</span> Appel de <strong>mediaPlayer.release()</strong> dans <strong>onDestroy()</strong> pour libérer proprement les ressources audio.
+            </li>
           </ul>
         </div>
 
@@ -390,6 +406,134 @@
     <span class="code-keyword">if</span> (mouvement &gt; SEUIL &amp;&amp; !alarmeActive) {
         runOnUiThread(() -&gt; <span class="code-fn">declencherAlarme</span>());
     }
+}</code></pre>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══ PAGE : GÉNÉRATEUR ═══ -->
+  <section id="page-generateur" class="page">
+    <div class="container">
+
+      <div class="antivol-back">
+        <button class="antivol-back-btn" onclick="navigateTo('projets')">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+          Retour aux projets
+        </button>
+      </div>
+
+      <div class="antivol-hero glass-card">
+        <div class="antivol-hero__left">
+          <span class="antivol-tag">Application Web</span>
+          <h2 class="antivol-title">🔐 Générateur de mot de passe</h2>
+          <p class="antivol-desc">Application web permettant de générer des mots de passe sécurisés et entièrement personnalisables. L'utilisateur choisit la longueur et les types de caractères. Tout se passe côté client : aucun mot de passe ne transite sur un serveur.</p>
+          <div class="antivol-tech-row">
+            <span class="tech-badge">HTML</span>
+            <span class="tech-badge">CSS</span>
+            <span class="tech-badge">JavaScript</span>
+            <span class="tech-badge">GitHub Pages</span>
+          </div>
+          <a href="https://gio2ni.github.io/g-n-rateur-mdp/" target="_blank" rel="noopener noreferrer" class="antivol-github-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            Voir le projet en ligne
+          </a>
+        </div>
+        <div class="antivol-hero__right">
+          <div class="antivol-phone-mock" style="width:200px;height:260px;border-radius:16px;background:var(--surface);border:1px solid var(--border);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.75rem;padding:1.25rem;">
+            <div style="font-size:2rem">🔐</div>
+            <div style="font-family:var(--font-mono);font-size:0.7rem;background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:0.5rem 0.75rem;letter-spacing:0.1em;color:var(--accent-blue)">A#k9!mP2</div>
+            <div style="display:flex;gap:0.4rem;flex-wrap:wrap;justify-content:center">
+              <span style="font-size:0.65rem;background:rgba(59,130,246,0.1);border:1px solid rgba(59,130,246,0.3);border-radius:4px;padding:2px 6px;color:var(--accent-blue)">Maj</span>
+              <span style="font-size:0.65rem;background:rgba(59,130,246,0.1);border:1px solid rgba(59,130,246,0.3);border-radius:4px;padding:2px 6px;color:var(--accent-blue)">Min</span>
+              <span style="font-size:0.65rem;background:rgba(59,130,246,0.1);border:1px solid rgba(59,130,246,0.3);border-radius:4px;padding:2px 6px;color:var(--accent-blue)">123</span>
+              <span style="font-size:0.65rem;background:rgba(59,130,246,0.1);border:1px solid rgba(59,130,246,0.3);border-radius:4px;padding:2px 6px;color:var(--accent-blue)">#@!</span>
+            </div>
+            <div style="width:100%;background:var(--accent-blue);color:#fff;border-radius:8px;padding:0.4rem;font-size:0.75rem;font-weight:600;text-align:center;cursor:pointer">Générer</div>
+            <div style="font-size:0.65rem;color:var(--text-muted)">Copier dans le presse-papier</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="antivol-grid">
+
+        <div class="antivol-section glass-card">
+          <h3 class="antivol-section__title">
+            <span class="antivol-section__icon">⚙️</span> Comment ça fonctionne
+          </h3>
+          <ol class="antivol-steps">
+            <li><strong>Tu choisis la longueur</strong> du mot de passe (curseur).</li>
+            <li><strong>Tu sélectionnes les types de caractères</strong> : majuscules, minuscules, chiffres, symboles.</li>
+            <li><strong>Tu cliques sur Générer</strong> → un mot de passe aléatoire s'affiche instantanément.</li>
+            <li><strong>Tu copies en un clic</strong> dans le presse-papier.</li>
+          </ol>
+          <p style="margin-top:0.75rem;font-size:0.875rem;color:var(--text-muted)">💡 <strong>Point clé :</strong> tout se passe côté client, dans le navigateur. Aucune donnée ne transite sur un serveur — confidentialité totale.</p>
+        </div>
+
+        <div class="antivol-section glass-card">
+          <h3 class="antivol-section__title">
+            <span class="antivol-section__icon">🔧</span> Difficultés &amp; Solutions
+          </h3>
+          <ul class="antivol-difficulties">
+            <li>
+              <strong>Garantir une vraie aléatoire</strong> — Math.random() seul ne garantit pas une distribution équitable entre les types de caractères.
+              <br><span style="color:var(--accent-green)">✅ Solution :</span> Construction d'un tableau de tous les caractères autorisés, puis pioche aléatoire dans ce tableau pour chaque position du mot de passe.
+            </li>
+            <li>
+              <strong>Interface responsive</strong> — faire fonctionner le design aussi bien sur mobile que sur ordinateur sans framework CSS.
+              <br><span style="color:var(--accent-green)">✅ Solution :</span> Utilisation de <strong>CSS Flexbox</strong> uniquement, sans dépendance externe, pour un design adaptatif léger.
+            </li>
+            <li>
+              <strong>Copie dans le presse-papier</strong> — navigator.clipboard.writeText() nécessite une connexion HTTPS pour fonctionner.
+              <br><span style="color:var(--accent-green)">✅ Solution :</span> Hébergement sur <strong>GitHub Pages</strong> qui fournit automatiquement le HTTPS, rendant la copie possible sans configuration supplémentaire.
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="antivol-section glass-card" style="margin-bottom:1.5rem">
+        <h3 class="antivol-section__title">
+          <span class="antivol-section__icon">🎓</span> Compétences BTS SIO validées
+        </h3>
+        <div class="blocs-list">
+          <div class="bloc-item">
+            <div class="bloc-item__header">
+              <span class="bloc-item__badge">B2.1</span>
+              <span class="bloc-item__title">Concevoir et développer une solution applicative</span>
+            </div>
+            <p class="bloc-item__desc">J'ai conçu et développé l'application de A à Z : interface utilisateur, logique de génération aléatoire, gestion des options et copie dans le presse-papier, entièrement en HTML, CSS et JavaScript.</p>
+          </div>
+          <div class="bloc-item">
+            <div class="bloc-item__header">
+              <span class="bloc-item__badge">B3.1</span>
+              <span class="bloc-item__title">Développer la présence en ligne de l'organisation</span>
+            </div>
+            <p class="bloc-item__desc">L'application est hébergée et accessible publiquement via GitHub Pages, intégrée au portfolio en ligne. Elle est consultable depuis n'importe quel navigateur sans installation.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="antivol-code-block glass-card">
+        <div class="code-header">
+          <span class="code-dot code-dot--red"></span>
+          <span class="code-dot code-dot--yellow"></span>
+          <span class="code-dot code-dot--green"></span>
+          <span class="code-filename">script.js — génération du mot de passe</span>
+        </div>
+        <pre class="code-content"><code><span class="code-keyword">function</span> <span class="code-fn">genererMotDePasse</span>() {
+    <span class="code-keyword">let</span> caracteres = <span class="code-string">""</span>;
+    <span class="code-keyword">if</span> (majuscules) caracteres += <span class="code-string">"ABCDEFGHIJKLMNOPQRSTUVWXYZ"</span>;
+    <span class="code-keyword">if</span> (minuscules) caracteres += <span class="code-string">"abcdefghijklmnopqrstuvwxyz"</span>;
+    <span class="code-keyword">if</span> (chiffres)   caracteres += <span class="code-string">"0123456789"</span>;
+    <span class="code-keyword">if</span> (symboles)   caracteres += <span class="code-string">"!@#$%^&amp;*()_+"</span>;
+
+    <span class="code-keyword">let</span> mdp = <span class="code-string">""</span>;
+    <span class="code-comment">// Pioche aléatoire dans le tableau de caractères</span>
+    <span class="code-keyword">for</span> (<span class="code-keyword">let</span> i = <span class="code-num">0</span>; i &lt; longueur; i++) {
+        mdp += caracteres[Math.floor(Math.random() * caracteres.length)];
+    }
+    <span class="code-keyword">return</span> mdp;
 }</code></pre>
       </div>
 
