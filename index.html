@@ -194,49 +194,73 @@
       </div>
       <div class="projets__grid">
 
-        <div class="project-card glass-card project-card--cyan">
-          <div class="project-card__top"><span class="project-icon">🔐</span><span class="project-tag">Application Web</span></div>
-          <h3 class="project-title">Générateur de mot de passe</h3>
-          <p class="project-desc">Application web permettant de générer des mots de passe sécurisés et personnalisables. Choix de la longueur, des caractères spéciaux, chiffres et lettres.</p>
-          <div class="project-tech"><span class="tech-badge">HTML</span><span class="tech-badge">CSS</span><span class="tech-badge">JavaScript</span></div>
-          <div class="project-blocs">
-            <span class="bloc-badge">B2.1</span>
-            <span class="bloc-badge">B3.1</span>
+        <div class="projet-col">
+          <div class="project-card glass-card project-card--cyan">
+            <div class="project-card__top"><span class="project-icon">🔐</span><span class="project-tag">Application Web</span></div>
+            <h3 class="project-title">Générateur de mot de passe</h3>
+            <p class="project-desc">Application web permettant de générer des mots de passe sécurisés et personnalisables. Choix de la longueur, des caractères spéciaux, chiffres et lettres.</p>
+            <div class="project-tech"><span class="tech-badge">HTML</span><span class="tech-badge">CSS</span><span class="tech-badge">JavaScript</span></div>
+            <div class="project-blocs">
+              <span class="bloc-badge">B2.1</span>
+              <span class="bloc-badge">B3.1</span>
+            </div>
+            <div class="project-actions">
+              <button onclick="navigateTo('generateur')" class="proj-btn proj-btn--primary">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                Voir le projet
+              </button>
+              <a href="https://gio2ni.github.io/g-n-rateur-mdp/" target="_blank" rel="noopener noreferrer" class="proj-btn proj-btn--android">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                Voir en ligne
+              </a>
+            </div>
+            <div class="project-card__glow"></div>
           </div>
-          <div class="project-actions">
-            <button onclick="navigateTo('generateur')" class="proj-btn proj-btn--primary">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              Voir le projet
-            </button>
-            <a href="https://gio2ni.github.io/g-n-rateur-mdp/" target="_blank" rel="noopener noreferrer" class="proj-btn proj-btn--android">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-              Voir en ligne
-            </a>
+          <div class="projet-rapport glass-card">
+            <div class="projet-rapport__info">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="13" y2="17"/></svg>
+              Rapport de projet — Générateur MDP
+            </div>
+            <div class="projet-rapport__actions">
+              <button class="rapport-btn rapport-btn--download rapport-btn--green" onclick="downloadDoc('./assets/documents/rapport-projet-1.pdf','Rapport_Projet_Generateur_MDP_BINTOUL_Giovanni.pdf',this)"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Télécharger</button>
+              <a href="./assets/documents/rapport-projet-1.pdf" target="_blank" rel="noreferrer" class="rapport-btn rapport-btn--voir rapport-btn--green"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Voir</a>
+            </div>
           </div>
-          <div class="project-card__glow"></div>
         </div>
 
-        <div class="project-card glass-card project-card--violet">
-          <div class="project-card__top"><span class="project-icon">🛡️</span><span class="project-tag">Application Mobile / Logiciel</span></div>
-          <h3 class="project-title">Application Anti-vol</h3>
-          <p class="project-desc">Application de sécurité permettant de détecter et prévenir les tentatives de vol. Système d'alerte, suivi en temps réel et notifications automatiques.</p>
-          <div class="project-tech"><span class="tech-badge">Java</span><span class="tech-badge">Android</span><span class="tech-badge">Sécurité</span></div>
-          <div class="project-blocs">
-            <span class="bloc-badge">B2.1</span>
-            <span class="bloc-badge">B3.3</span>
-            <span class="bloc-badge">B1.4</span>
+        <div class="projet-col">
+          <div class="project-card glass-card project-card--violet">
+            <div class="project-card__top"><span class="project-icon">🛡️</span><span class="project-tag">Application Mobile / Logiciel</span></div>
+            <h3 class="project-title">Application Anti-vol</h3>
+            <p class="project-desc">Application de sécurité permettant de détecter et prévenir les tentatives de vol. Système d'alerte, suivi en temps réel et notifications automatiques.</p>
+            <div class="project-tech"><span class="tech-badge">Java</span><span class="tech-badge">Android</span><span class="tech-badge">Sécurité</span></div>
+            <div class="project-blocs">
+              <span class="bloc-badge">B2.1</span>
+              <span class="bloc-badge">B3.3</span>
+              <span class="bloc-badge">B1.4</span>
+            </div>
+            <div class="project-actions">
+              <button onclick="navigateTo('antivol')" class="proj-btn proj-btn--primary">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                Voir le projet
+              </button>
+              <a href="./assets/documents/antivol.apk" download="AntiVol_BINTOUL_Giovanni.apk" class="proj-btn proj-btn--android">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                Télécharger l'APK
+              </a>
+            </div>
+            <div class="project-card__glow"></div>
           </div>
-          <div class="project-actions">
-            <button onclick="navigateTo('antivol')" class="proj-btn proj-btn--primary">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              Voir le projet
-            </button>
-            <a href="./assets/documents/antivol.apk" download="AntiVol_BINTOUL_Giovanni.apk" class="proj-btn proj-btn--android">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-              Télécharger l'APK
-            </a>
+          <div class="projet-rapport glass-card">
+            <div class="projet-rapport__info">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="13" y2="17"/></svg>
+              Rapport de projet — Anti-vol
+            </div>
+            <div class="projet-rapport__actions">
+              <button class="rapport-btn rapport-btn--download rapport-btn--blue" onclick="downloadDoc('./assets/documents/rapport-projet-2.pdf','Rapport_Projet_Antivol_BINTOUL_Giovanni.pdf',this)"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Télécharger</button>
+              <a href="./assets/documents/rapport-projet-2.pdf" target="_blank" rel="noreferrer" class="rapport-btn rapport-btn--voir rapport-btn--blue"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Voir</a>
+            </div>
           </div>
-          <div class="project-card__glow"></div>
         </div>
 
       </div>
@@ -376,21 +400,6 @@
 }</code></pre>
       </div>
 
-      <div class="antivol-section glass-card" style="margin-top:1.5rem">
-        <h3 class="antivol-section__title">
-          <span class="antivol-section__icon">📄</span> Rapport de projet
-        </h3>
-        <div class="rapports__grid" style="grid-template-columns:1fr">
-          <div class="rapport-card glass-card">
-            <div class="rapport-card__icon rapport-card__icon--blue"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="13" y2="17"/></svg></div>
-            <h3 class="rapport-title">Rapport de projet — Application Anti-vol</h3>
-            <div class="rapport-card__actions">
-              <button class="rapport-btn rapport-btn--download rapport-btn--blue" onclick="downloadDoc('./assets/documents/rapport-projet-2.pdf','Rapport_Projet_Antivol_BINTOUL_Giovanni.pdf',this)"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Télécharger</button>
-              <a href="./assets/documents/rapport-projet-2.pdf" target="_blank" rel="noreferrer" class="rapport-btn rapport-btn--voir rapport-btn--blue"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Voir</a>
-            </div>
-          </div>
-        </div>
-      </div>
 
     </div>
   </section>
@@ -520,21 +529,6 @@
 }</code></pre>
       </div>
 
-      <div class="antivol-section glass-card" style="margin-top:1.5rem">
-        <h3 class="antivol-section__title">
-          <span class="antivol-section__icon">📄</span> Rapport de projet
-        </h3>
-        <div class="rapports__grid" style="grid-template-columns:1fr">
-          <div class="rapport-card glass-card">
-            <div class="rapport-card__icon rapport-card__icon--green"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="13" y2="17"/></svg></div>
-            <h3 class="rapport-title">Rapport de projet — Générateur de mot de passe</h3>
-            <div class="rapport-card__actions">
-              <button class="rapport-btn rapport-btn--download rapport-btn--green" onclick="downloadDoc('./assets/documents/rapport-projet-1.pdf','Rapport_Projet_Generateur_MDP_BINTOUL_Giovanni.pdf',this)"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Télécharger</button>
-              <a href="./assets/documents/rapport-projet-1.pdf" target="_blank" rel="noreferrer" class="rapport-btn rapport-btn--voir rapport-btn--green"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Voir</a>
-            </div>
-          </div>
-        </div>
-      </div>
 
     </div>
   </section>
