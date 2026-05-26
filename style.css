@@ -245,7 +245,13 @@ html.dark-mode .icon-moon { display:block; }
 .exp-period--green  { background:rgba(16,185,129,0.1); color:var(--accent-green); }
 .exp-period--blue   { background:rgba(59,130,246,0.1);  color:var(--accent-blue); }
 .exp-period--violet { background:rgba(124,58,237,0.1); color:var(--accent-violet); }
-.exp-card__docs { display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.75rem; padding-top:0.65rem; border-top:1px solid var(--border); }
+.exp-card__docs { display:flex; flex-direction:column; gap:0.45rem; margin-top:1rem; padding-top:0.9rem; border-top:1px solid var(--border); }
+.exp-doc-row { display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:0.55rem 0.9rem; border-radius:10px; background:var(--surface2); border:1px solid var(--border); transition:transform 0.2s ease, box-shadow 0.2s ease; }
+.exp-doc-row:hover { transform:translateX(5px); box-shadow:0 4px 12px rgba(0,0,0,0.12); }
+.exp-card--blue  .exp-doc-row { border-left:3px solid var(--accent-blue); }
+.exp-card--green .exp-doc-row { border-left:3px solid var(--accent-green); }
+.exp-doc-label { display:flex; align-items:center; gap:0.5rem; font-size:0.82rem; font-weight:500; color:var(--text); }
+.exp-doc-btns { display:flex; gap:0.4rem; flex-shrink:0; }
 
 /* Formations */
 .formation__list { display:flex; flex-direction:column; gap:0.75rem; }
