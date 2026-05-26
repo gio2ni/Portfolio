@@ -245,6 +245,10 @@ html.dark-mode .icon-moon { display:block; }
 .exp-period--green  { background:rgba(16,185,129,0.1); color:var(--accent-green); }
 .exp-period--blue   { background:rgba(59,130,246,0.1);  color:var(--accent-blue); }
 .exp-period--violet { background:rgba(124,58,237,0.1); color:var(--accent-violet); }
+.exp-card__docs { display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.75rem; padding-top:0.6rem; border-top:1px solid var(--border); opacity:0; max-height:0; overflow:hidden; transition:opacity 0.25s ease, max-height 0.3s ease; }
+.exp-card:hover .exp-card__docs { opacity:1; max-height:80px; }
+.exp-doc-btn { display:inline-flex; align-items:center; gap:0.35rem; font-size:0.75rem; font-weight:500; padding:0.3rem 0.65rem; border-radius:6px; text-decoration:none; color:var(--text-muted); border:1px solid var(--border); background:var(--surface2); transition:color 0.2s, border-color 0.2s, background 0.2s; }
+.exp-doc-btn:hover { color:var(--accent-blue); border-color:var(--accent-blue); background:rgba(59,130,246,0.08); }
 
 /* Formations */
 .formation__list { display:flex; flex-direction:column; gap:0.75rem; }
